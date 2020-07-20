@@ -1,4 +1,7 @@
 import React from 'react';
+//Components
+import QuestionCard from './components/QuestionCard';
+
 
 const App = () => {
   
@@ -20,7 +23,8 @@ const App = () => {
       <button className="start" onClick={startTrivia}>START</button>
       <p className="score">Score:</p>
       <p>Loading Questions...</p>
-      
+      <QuestionCard />
+      <button className="next" onclick={nextQuestion}>Next Question</button>
     </div>
   );
 }

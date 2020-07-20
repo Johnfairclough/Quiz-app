@@ -1,17 +1,31 @@
 import React from 'react';
+import { directive } from '@babel/types';
+import { Button } from 'react-native';
 
 
 type Props = {
     question: string;
-    answer: string[];
+    answers: string[];
     callback: any;
-    userAnswer: string;
+    userAnswer: any;
     questionNr: number;
     totalQuestions: number;
 }
 
-const QuestionCard: React.FC<Props> = ({ question, answer, callback, userAnswer, questionNr, totalQuestions}) = () => (
-    <div>Question Card</div>
+const QuestionCard: React.FC<Props> = ({ question, answers, callback, userAnswer, questionNr, totalQuestions}) = () => (
+    <div>
+    <p className="number">
+    Question: {questionNr} / {totalQuestions}
+    </p>
+    <p dangerouslySetInnerHtml={{ __html: question }} />
+    <div>
+    {answers.map(answer => (
+        <div>
+            <button disabled={userAnswer}>
+        </div>
+    ))}
+    </div>
+    </div>
     );
 
 export default QuestionCard;
